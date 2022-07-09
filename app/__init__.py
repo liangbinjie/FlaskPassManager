@@ -10,7 +10,7 @@ def create_app():
     app.register_blueprint(main_bp)
     
     
-    app.run()
+    return app
 # from .main import main_bp
 # app.register_blueprint(main_bp)
 
