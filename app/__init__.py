@@ -14,5 +14,5 @@ app = Flask(__name__)
 from .main import main_bp
 app.register_blueprint(main_bp)
 
-
-app.run(host='0.0.0.0', debug=False)
+if __name__ == "__main__":
+    app.run()
