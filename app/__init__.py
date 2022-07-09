@@ -15,4 +15,4 @@ from .main import main_bp
 app.register_blueprint(main_bp)
 
 
-app.run()
+app.run(host='0.0.0.0', debug=False)
