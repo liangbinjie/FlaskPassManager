@@ -1,0 +1,4 @@
+wsgi.py
+structure.txt
+/venv/
+/app/__pycache__/
