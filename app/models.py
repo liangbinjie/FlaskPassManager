@@ -7,13 +7,15 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
 
-    passwords = db.relationship('Passwords', backref='admin')
+    passwords = db.relationship('Passwords', backref='owner')
 
 
 class Passwords(db.Model):
-    id = db.Column(db.Integer, primary__key=True)
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     url = db.Column(db.String(1000))
     password = db.Column(db.String(1000))
     email = db.Column(db.String(200))
     username = db.Column(db.String(100))
+
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

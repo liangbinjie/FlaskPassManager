@@ -1,18 +1,16 @@
 from flask import *
+from flask_login import *
 
-main_bp = Blueprint('main_bp', __name__)
+main = Blueprint('main', __name__)
 
 
-@main_bp.route('/')
+@main.route('/home')
+@login_required
 def index():
-    return render_template('index.html')
+    return render_template('base.html')
 
 
-@main_bp.route("/user")
+@main.route("/user")
 def user():
     return "User"
 
-
-@main_bp.route("/home")
-def home():
-    return "Home"

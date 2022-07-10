@@ -49,3 +49,8 @@ button {
     border-radius: 5px;
     font-weight: bold;
 }
+
+button:hover {
+    color: white;
+    background-color: #0a0a23;
+}
