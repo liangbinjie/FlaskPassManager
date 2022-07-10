@@ -1,0 +1,51 @@
+* {
+    font-family: sans-serif;
+}
+
+
+body {
+    background-image: url('https://wallpaperaccess.com/full/6502071.gif');
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    margin: 15% 25%;
+    padding: 50px;
+    border-radius: 15px;
+    color: white;
+}
+
+form {
+    text-align: center;
+    font-weight: bold;
+
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+input {
+    background-color: #0a0a2387;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #b5b5ff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}

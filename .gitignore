@@ -2,3 +2,4 @@ wsgi.py
 structure.txt
 /venv/
 /app/__pycache__/
+/app/db.sqlite3
