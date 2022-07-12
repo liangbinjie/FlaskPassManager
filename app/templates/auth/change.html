@@ -9,11 +9,19 @@
   <body>
     <div class="container">
       <h1>Change User</h1>
-
+      {% with messages = get_flashed_messages() %}
+        {% if messages %} 
+        <div class="flashmsg">
+            {% for message in messages %} 
+            <h3>{{ message }}</h3>
+            {% endfor %}
+        </div>
+        {% endif %} 
+       {% endwith %}
       <form action="/changeUser" method="POST">
-        <label for="username">New username <input type="text" name="username" placeholder="username" required></label>
-        
-        <label for="password">New password <input type="password" name="password" placeholder="password" required></label>
+        <label for="username">New username <input type="text" name="username" placeholder="username" value="{{ username }}"></label>
+        <label for="password">Current password <input type="password" name="current_password" placeholder="password" required></label>
+        <label for="password">New password <input type="password" name="new_password" placeholder="password" required></label>
         
         <button type="submit">Change</button>
       </form>

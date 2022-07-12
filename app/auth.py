@@ -50,7 +50,9 @@ def logout():
 @auth.route("/changeUser")
 @login_required
 def changeUser():
-    return render_template('auth/change.html')
+    user = current_user.username
+    
+    return render_template('auth/change.html', username = user)
 
 
 @auth.route("/changeUser", methods=['POST'])
@@ -58,11 +60,17 @@ def changeUser():
 def changeUserPOST():
     
     user = request.form['username']
-    password = request.form['password']
+    current_pass = request.form['current_password']
+    new_password = request.form['new_password']
 
     if request.method == 'POST':
-        current_user.username = user
-        current_user.password = generate_password_hash(password)
+        if check_password_hash(current_user.password, current_pass):
+            current_user.username = user
+            current_user.password = generate_password_hash(new_password)
+        
+        else:
+            flash("Current password is incorrect")
+            return redirect(url_for('auth.changeUser'))
 
         db.session.commit()
         logout_user()
