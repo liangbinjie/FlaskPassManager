@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
   </head>
   <body>
+    {% if not current_user.is_authenticated %}
+
     <div class="container">
       <h1>Password Manager</h1>
       {% with messages = get_flashed_messages() %}
@@ -28,5 +30,10 @@
 
     </div>
     
+    {% endif %}
+    {% if current_user.is_authenticated %} 
+    <h1>You are already logged in, please return</h1>
+    <a href="{{ url_for('main.index') }}"><button>Return</button></a>
+    {% endif %}
   </body>
 </html>
