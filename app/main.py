@@ -7,7 +7,7 @@ main = Blueprint('main', __name__)
 @main.route('/home')
 @login_required
 def index():
-    return render_template('base.html')
+    return render_template('home.html')
 
 
 @main.route("/user")

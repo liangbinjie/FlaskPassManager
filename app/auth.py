@@ -62,11 +62,16 @@ def changeUserPOST():
     user = request.form['username']
     current_pass = request.form['current_password']
     new_password = request.form['new_password']
+    confirm_password = request.form['confirm_password']
 
     if request.method == 'POST':
         if check_password_hash(current_user.password, current_pass):
-            current_user.username = user
-            current_user.password = generate_password_hash(new_password)
+            if new_password == confirm_password:
+                current_user.username = user
+                current_user.password = generate_password_hash(new_password)
+            else:
+                flash("Passwords don't match")
+                return redirect(url_for('auth.changeUser'))
         
         else:
             flash("Current password is incorrect")
