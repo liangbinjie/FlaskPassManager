@@ -12,6 +12,7 @@
     <body>
         <table class="table">
             <thead class="table-dark">
+
               <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Password</th>
@@ -22,39 +23,19 @@
               </tr>
             </thead>
             <tbody>
+              {% for password in passwords %}
               <tr>
-                <th scope="row">Name</th>
-                <td>password</td>
-                <td>https://google.com</td>
-                <td>benji</td>
-                <td>benji@gmail.com</td>
+                <th scope="row">{{ password.title }}</th>
+                <td>{{ password.password }}</td>
+                <td>{{ password.url }}</td>
+                <td>{{ password.username}}</td>
+                <td>{{ password.email }}</td>
                 <td>
                   <a><button><i class="bi bi-pencil-fill"></i></button></a>
                   <a><button><i class="bi bi-trash-fill"></i></button></a>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">Name</th>
-                <td>password</td>
-                <td>https://google.com</td>
-                <td>benji</td>
-                <td>benji@gmail.com</td>
-                <td>
-                  <a><button><i class="bi bi-pencil-fill"></i></button></a>
-                  <a><button><i class="bi bi-trash-fill"></i></button></a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Name</th>
-                <td>password</td>
-                <td>https://google.com</td>
-                <td>benji</td>
-                <td>benji@gmail.com</td>
-                <td>
-                  <a><button><i class="bi bi-pencil-fill"></i></button></a>
-                  <a><button><i class="bi bi-trash-fill"></i></button></a>
-                </td>
-              </tr>
+              {% endfor %}
              
             </tbody>
           </table>
@@ -62,7 +43,7 @@
         
 
         <a href="{{ url_for('auth.changeUser') }}"><button>Settings</button></a>
-        <a href="{{ url_for('') }}"><button><i class="bi bi-plus-lg"></i></button></a>
+        <a href="{{ url_for('main.add') }}"><button><i class="bi bi-plus-lg"></i></button></a>
 
    
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
