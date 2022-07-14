@@ -3,4 +3,4 @@ structure.txt
 /venv/
 /app/__pycache__/
 /app/db.sqlite3
-/app/database.sqlite3
+# /app/database.sqlite3
