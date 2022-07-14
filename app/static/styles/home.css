@@ -1,0 +1,26 @@
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+.buttons {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+  }
+
+.buttons a {
+    margin: 20px;
+}
+
+.settings {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 5px;
+}
+
+.settings i {
+    font-size: 30px;
+}

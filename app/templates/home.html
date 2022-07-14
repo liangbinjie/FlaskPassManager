@@ -31,7 +31,7 @@
                 <td>{{ password.username}}</td>
                 <td>{{ password.email }}</td>
                 <td>
-                  <a><button><i class="bi bi-pencil-fill"></i></button></a>
+                  <a href="/modify/{{ password.id }}"><button><i class="bi bi-pencil-fill"></i></button></a>
                   <a href="/delete/{{ password.id }}"><button><i class="bi bi-trash-fill"></i></button></a>
                 </td>
               </tr>
@@ -41,12 +41,14 @@
           </table>
           
         
+        <div class="buttons">
+          <a href="{{ url_for('main.add') }}"><button>Add new password</button></a>
+        </div>
 
-        <a href="{{ url_for('auth.changeUser') }}"><button>Settings</button></a>
-        <a href="{{ url_for('main.add') }}"><button><i class="bi bi-plus-lg"></i></button></a>
-
+        <div class="settings">
+          <a href="{{ url_for('auth.changeUser') }}"><i class="bi bi-gear-fill"></i></a>
+        </div>
+        
    
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     </body>
 </html>

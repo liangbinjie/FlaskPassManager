@@ -42,3 +42,28 @@ def delete(id):
     db.session.delete(row)
     db.session.commit()
     return redirect(url_for('main.index'))
+
+
+@main.route("/modify/<int:id>", methods=['GET'])
+@login_required
+def modify(id):
+    row = Passwords.query.filter_by(id=id).first()
+    return render_template('config/modify.html', password=row)
+
+
+@main.route("/modify/<int:id>", methods=['POST'])
+@login_required
+def modify_post(id):
+    row = Passwords.query.filter_by(id=id).first()
+
+    row.title = request.form['title']
+    row.password = request.form['password']
+    row.url = request.form['url']
+    row.username = request.form['username']
+    row.email = request.form['email']
+
+    db.session.commit()
+
+
+    return redirect(url_for('main.index'))
+
