@@ -32,7 +32,7 @@
                 <td>{{ password.email }}</td>
                 <td>
                   <a><button><i class="bi bi-pencil-fill"></i></button></a>
-                  <a><button><i class="bi bi-trash-fill"></i></button></a>
+                  <a href="/delete/{{ password.id }}"><button><i class="bi bi-trash-fill"></i></button></a>
                 </td>
               </tr>
               {% endfor %}

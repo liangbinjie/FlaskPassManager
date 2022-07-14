@@ -14,11 +14,13 @@ def index():
 
 
 @main.route("/add")
+@login_required
 def add():
     return render_template('config/add.html')
 
 
 @main.route("/add", methods=['POST'])
+@login_required
 def add_post():
     title = request.form['title']
     password = request.form['password']
@@ -32,3 +34,11 @@ def add_post():
 
     return redirect(url_for('main.index'))
 
+
+@main.route("/delete/<int:id>", methods=['POST', 'GET'])
+@login_required
+def delete(id):
+    row = Passwords.query.filter_by(id=id).first()
+    db.session.delete(row)
+    db.session.commit()
+    return redirect(url_for('main.index'))
