@@ -1,3 +1,5 @@
+import os
+import subprocess
 from flask import *
 from flask_login import *
 from .models import User
@@ -80,6 +82,3 @@ def changeUserPOST():
         db.session.commit()
         logout_user()
         return redirect(url_for('auth.login'))
-
-
-    
