@@ -1,3 +1,9 @@
 # Flask Password Manager
 
-Underdevelopment
+Under development
+------------------------------------
+# Credentials
+
+Default username: `admin`
+
+Default password: `admin12345`
