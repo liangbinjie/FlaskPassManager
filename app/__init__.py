@@ -33,9 +33,3 @@ def create_app():
     app.register_blueprint(auth)
         
     return app
-
-# from .main import main_bp
-# app.register_blueprint(main_bp)
-
-# if __name__ == '__main__':
-#     app.run()
